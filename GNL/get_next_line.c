@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 11:31:33 by tpons             #+#    #+#             */
-/*   Updated: 2019/10/28 14:51:33 by tpons            ###   ########.fr       */
+/*   Updated: 2019/10/28 15:19:33 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ int	get_next_line(int fd, char **line)
 	}
 	free(buf);
 	*line = ft_setline(save);
-	while (*save != '\n')
+	while (*save != '\n' && *save)
 		save++;
 	save++;
-	//save = ft_subcstr(save, '\n', 1);
 	if (rtn == 0)
 		return (0);
 	return (1);
@@ -68,6 +67,7 @@ int main()
 	else
 		printf("No FD.\n");
 	close(fd);
+	while(1) {}
 	return (0);
 	//while(1) {}
 	/*write(1,"test2\n", 6);

@@ -6,7 +6,7 @@
 /*   By: tpons <tpons@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 11:32:20 by tpons             #+#    #+#             */
-/*   Updated: 2019/10/28 14:49:53 by tpons            ###   ########.fr       */
+/*   Updated: 2019/10/28 15:19:32 by tpons            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char			*ft_strjoin(char const *save, char const *buf)
 	if (!save && !buf)
 		return (0);
 	if (!save)
-		return (ft_subcstr(buf/*, '\0', 0*/));
+		return (ft_subcstr(buf));
 	n = (ft_strlen_isin(save, 1) + ft_strlen_isin(buf, 1) + 1); //COUCOU
 	if (!(str = malloc(sizeof(char) * n)))
 		return (0);
@@ -71,7 +71,7 @@ char			*ft_strjoin(char const *save, char const *buf)
 	return (str);
 }
 
-char			*ft_subcstr(char const *s/*, char c, int mod*/)
+char			*ft_subcstr(char const *s)
 {
 	char			*str;
 	int				i;
@@ -80,18 +80,7 @@ char			*ft_subcstr(char const *s/*, char c, int mod*/)
 	i = 0;
 	j = 0;
 	while (s[i])
-	{
-	// 	if (mod && s[i] == c)
-	// 	{
-	// 		if (!(str = malloc(sizeof(char) * (ft_strlen_isin(s, 1) - i))))
-	// 			return (0);
-	// 		while (s[i])  // IL Y AVAIT UN I++ avant le while.
-	// 			str[j++] = s[i++];
-	// 		free((void *)s);
-	// 		return (str);
-	// 	}
 		i++;
-	}
 	if (!(str = malloc(sizeof(char) * (i + 1))))
 		return (0);
 	while (s[j])
